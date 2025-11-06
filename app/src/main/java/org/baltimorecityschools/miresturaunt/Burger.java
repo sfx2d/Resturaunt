@@ -21,8 +21,17 @@ public class Burger {
         this.tomatoSlice = tomatoSlice;
         this.quantity = quantity;
     }
-    private void calculatePrice(){
 
+    private void calculatePrice(){
+        price = BASE_PRICE;
+        if (lettuceSlice){
+            price += 0.90;
+        }
+        if (tomatoSlice){
+            price += 0.85;
+        }
+        price = price * quantity;
 
     }
+
 }
