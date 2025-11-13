@@ -1,5 +1,7 @@
 package org.baltimorecityschools.miresturaunt;
 
+import androidx.annotation.NonNull;
+
 public class Burger {
     private boolean lettuceSlice;
     private boolean tomatoSlice;
@@ -22,6 +24,42 @@ public class Burger {
         this.quantity = quantity;
     }
 
+    public void setLettuceSlice(boolean lettuceSlice) {
+        this.lettuceSlice = lettuceSlice;
+    }
+
+    public void setTomatoSlice(boolean tomatoSlice) {
+        this.tomatoSlice = tomatoSlice;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public boolean isLettuceSlice() {
+        return lettuceSlice;
+    }
+
+    public boolean isTomatoSlice() {
+        return tomatoSlice;
+    }
+
+    public double getBASE_PRICE() {
+        return BASE_PRICE;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
     private void calculatePrice(){
         price = BASE_PRICE;
         if (lettuceSlice){
@@ -34,4 +72,9 @@ public class Burger {
 
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return "Your total is " + price + "for " + quantity + " burgers.";
+    }
 }
