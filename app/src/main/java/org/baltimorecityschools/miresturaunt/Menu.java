@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class Menu extends AppCompatActivity {
     int quantity;
     TextView qtyTV, subtotalTV, taxTV, totalTV;
     Burger burgerOrder;
+    CheckBox checkLettuce, checkTomato;
     double subtotal, tax, total;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class Menu extends AppCompatActivity {
         quantity = 0;
         taxTV = findViewById(R.id.taxTV);
         totalTV = findViewById(R.id.totaLtv);
+        checkLettuce = findViewById(R.id.checkLettuce);
+        checkTomato = findViewById(R.id.checkTomato);
 
         addBTN.setOnClickListener(v -> {
             quantity +=1;
@@ -44,9 +48,17 @@ public class Menu extends AppCompatActivity {
 
         });
         totalBTN.setOnClickListener(v -> {
-            burgerOrder = new Burger(false, false, quantity);
+            if(checkLettuce.isChecked()&& checkTomato.isChecked()){
+                burgerOrder = new Burger(true, true, quantity);
+            } else if (checkLettuce.isChecked()&& !checkTomato.isChecked()) {
+                burgerOrder = new Burger(true, false, quantity);
+            } else if (!checkLettuce.isChecked()&& checkTomato.isChecked()) {
+                burgerOrder = new Burger(false, true, quantity);
+            }else {
+                burgerOrder = new Burger(false, false, quantity);
+            }
             Log.d("aaa", burgerOrder.toString());
-            subtotal = burgerOrder.getPrice();
+            subtotal += burgerOrder.getPrice();
             subtotalTV.setText("Subtotal: $ " + subtotal);
             tax = subtotal * 0.06;
             total = subtotal + tax;

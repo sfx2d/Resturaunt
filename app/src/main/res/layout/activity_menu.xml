@@ -29,10 +29,20 @@
             android:text="-1"
             android:textSize="20sp"
             android:id="@+id/subtractBTN"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lettuce"
+            android:id="@+id/checkLettuce"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tomato"
+            android:id="@+id/checkTomato"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total up"
+            android:text="Add to order"
             android:textSize="20sp"
             android:id="@+id/totalBTN"/>
         <TextView
@@ -47,6 +57,7 @@
             android:text="Tax: $0 "
             android:textSize="40sp"
             android:id="@+id/taxTV"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,6 +70,7 @@
             android:text="Send Order"
             android:textSize="30sp"
             android:id="@+id/sendBTN"/>
+
 
 
 
