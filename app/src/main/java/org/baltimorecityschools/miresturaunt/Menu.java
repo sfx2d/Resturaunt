@@ -48,7 +48,7 @@ public class Menu extends AppCompatActivity {
             tax = subtotal * 0.06;
             total = subtotal + tax;
             taxTV.setText("Tax: $ " + tax);
-            totalTV.setText("Total: $" + total);
+            totalTV.setText("Total: $ " + total);
 
 
 
