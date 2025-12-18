@@ -15,6 +15,7 @@ public class Burger {
         tomatoSlice = false;
         price = BASE_PRICE;
         quantity = 1;
+        calculatePrice();
 
     }
 
@@ -22,22 +23,24 @@ public class Burger {
         this.lettuceSlice = lettuceSlice;
         this.tomatoSlice = tomatoSlice;
         this.quantity = quantity;
+        calculatePrice();
     }
 
     public void setLettuceSlice(boolean lettuceSlice) {
         this.lettuceSlice = lettuceSlice;
+        calculatePrice();
     }
 
     public void setTomatoSlice(boolean tomatoSlice) {
         this.tomatoSlice = tomatoSlice;
+        calculatePrice();
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+        calculatePrice();
     }
 
     public boolean isLettuceSlice() {
@@ -75,6 +78,6 @@ public class Burger {
     @NonNull
     @Override
     public String toString() {
-        return "Your total is " + price + "for " + quantity + " burgers.";
+        return "Your total is " + price + " for " + quantity + " burgers.";
     }
 }

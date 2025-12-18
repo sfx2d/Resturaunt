@@ -13,13 +13,14 @@
         android:contentDescription="Applebee's Logo"
         android:src="@drawable/applebeeslogo"
         android:background="@color/bluegreen"/>
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Address: 6798 Reisterstown Rd, Baltimore, MD 21215"
         android:textColor="@color/black"
-        android:textSize="32sp"/>
+        android:textSize="32sp"
+        android:id="@+id/addressMap"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
